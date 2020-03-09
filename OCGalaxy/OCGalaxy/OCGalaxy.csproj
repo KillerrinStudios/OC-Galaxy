@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="killerrin.OCTranspo.Net" Version="1.0.0-CI-20200308-233936" />
+    <PackageReference Include="Tizen.Wearable.CircularUI" Version="1.4.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
