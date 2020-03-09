@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Tizen.NET.Sdk/1.0.9">
 
-  <!-- Property Group for Tizen40 Project -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>tizen40</TargetFramework>
@@ -12,10 +11,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>None</DebugType>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="shared\res\appbar.train.svg" />
-    <None Remove="shared\res\OCGalaxy.psd" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="lib\" />
@@ -26,10 +21,10 @@
     <PackageReference Include="Tizen.Wearable.CircularUI" Version="1.4.0" />
   </ItemGroup>
 
-  
   <ItemGroup>
-    <ProjectReference Include="..\OCGalaxy\OCGalaxy.csproj" />
+    <ProjectReference Include="..\..\OCGalaxy\OCGalaxy\OCGalaxy.csproj" />
   </ItemGroup>
+
   
 
 </Project>

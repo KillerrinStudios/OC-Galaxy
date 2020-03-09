@@ -1,14 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest package="org.tizen.KillerrinStudios.OCGalaxy.Tizen.Wearable" version="1.0.0" api-version="4" xmlns="http://tizen.org/ns/packages">
-    <author>Killerrin Studios</author>
-    <profile name="wearable" />
-    <ui-application appid="org.tizen.KillerrinStudios.OCGalaxy.Tizen.Wearable" exec="OCGalaxy.Tizen.Wearable.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
-        <label>OCGalaxy.Tizen.Wearable</label>
-        <icon>OCGalaxy.Tizen.Wearable.png</icon>
-        <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
-        <splash-screens />
-    </ui-application>
-    <shortcut-list />
-    <dependencies />
-    <provides-appdefined-privileges />
+  <author>Killerrin Studios</author>
+  <profile name="wearable" />
+  <ui-application appid="org.tizen.KillerrinStudios.OCGalaxy.Tizen.Wearable"
+                  exec="OCGalaxy.Tizen.Wearable.dll"
+                  multiple="false"
+                  nodisplay="false"
+                  taskmanage="true"
+                  type="dotnet"
+                  launch_mode="single">
+    <label>OCGalaxy.Tizen.Wearable</label>
+    <icon>OCGalaxy.Tizen.Wearable.png</icon>
+    <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
+    <splash-screens />
+  </ui-application>
+  <shortcut-list />
+  <dependencies />
+  <privileges>
+    <privilege>http://tizen.org/privilege/internet</privilege>
+  </privileges>
+  <provides-appdefined-privileges />
 </manifest>

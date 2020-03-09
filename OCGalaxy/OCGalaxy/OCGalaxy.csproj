@@ -14,6 +14,9 @@
     <Compile Update="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Update="MainWidgetPage.xaml.cs">
+      <DependentUpon>MainWidgetPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

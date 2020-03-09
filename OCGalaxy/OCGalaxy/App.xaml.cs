@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OCGalaxy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,21 @@ namespace OCGalaxy
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
-        public App()
+        public OCApplicationType ocApplicationType;
+
+        public App(OCApplicationType appType)
         {
+            ocApplicationType = appType;
             InitializeComponent();
 
-            MainPage = new OCGalaxy.MainPage();
+            if (appType == OCApplicationType.Application)
+            {
+                MainPage = new MainPage();
+            }
+            else if (appType == OCApplicationType.Widget)
+            {
+                MainPage = new MainWidgetPage();
+            }
         }
 
         protected override void OnStart()

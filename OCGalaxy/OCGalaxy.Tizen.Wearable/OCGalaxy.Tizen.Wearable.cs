@@ -3,20 +3,13 @@ using Xamarin.Forms;
 
 namespace OCGalaxy
 {
-    class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
+    class OCGalaxyApplication : global::Xamarin.Forms.Platform.Tizen.FormsApplication
     {
         protected override void OnCreate()
         {
             base.OnCreate();
-
-            LoadApplication(new App());
-        }
-
-        static void Main(string[] args)
-        {
-            var app = new Program();
-            Forms.Init(app);
-            app.Run(args);
+            var app = new App(Models.OCApplicationType.Application);
+            LoadApplication(app);
         }
     }
 }
