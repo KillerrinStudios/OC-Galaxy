@@ -9,13 +9,7 @@
     RotaryFocusObject="{Binding RotaryFocusTarget}">
     <w:CirclePage.Content>
         <Grid>
-            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13 min" StopName="Billings Bridge 2A" IsGPS="True" />
-            <!--<w:CircleImage Source="backgrounds/WidgetBackground.png" />
-            <StackLayout>
-                <Label Text="OC Transpo - Widget"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            </StackLayout>-->
+            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13 min" StopName="Billings Bridge 2A" IsGPS="True"/>
         </Grid>
     </w:CirclePage.Content>
 </w:CirclePage>
