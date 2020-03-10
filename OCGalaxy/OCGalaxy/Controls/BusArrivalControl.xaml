@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:w="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms" 
+             mc:Ignorable="d"
+             x:Class="OCGalaxy.Controls.BusArrivalControl">
+    <ContentView.Content>
+        <Grid>
+            <w:CircleImage x:Name="BusImage" Source="backgrounds/WidgetBackground.png" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                    <Label x:Name="RouteNumberLabel" TextColor="White" />
+                    <Label x:Name="RouteNameLabel" TextColor="White" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Grid.Row="1">
+                    <Image x:Name="GPSIcon" Source="icons/appbar.location.round.png" />
+                    <Label x:Name="ArrivalTimeLabel" TextColor="White" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Label x:Name="StopNameLabel" TextColor="White" />
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

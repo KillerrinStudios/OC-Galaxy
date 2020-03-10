@@ -11,6 +11,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>None</DebugType>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="shared\res\appbar.train.svg" />
+    <None Remove="shared\res\OCGalaxy.psd" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="lib\" />

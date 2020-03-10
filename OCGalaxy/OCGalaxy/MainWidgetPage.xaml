@@ -4,13 +4,18 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OCGalaxy"
+    xmlns:occ="clr-namespace:OCGalaxy.Controls"
     xmlns:w="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms" 
     RotaryFocusObject="{Binding RotaryFocusTarget}">
     <w:CirclePage.Content>
-        <StackLayout>
-            <Label Text="OC Transpo - Widget2"
+        <Grid>
+            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13 min" StopName="Billings Bridge 2A" IsGPS="True" />
+            <!--<w:CircleImage Source="backgrounds/WidgetBackground.png" />
+            <StackLayout>
+                <Label Text="OC Transpo - Widget"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            </StackLayout>-->
+        </Grid>
     </w:CirclePage.Content>
 </w:CirclePage>
