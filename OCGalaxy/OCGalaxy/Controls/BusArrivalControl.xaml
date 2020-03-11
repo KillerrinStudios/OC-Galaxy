@@ -27,7 +27,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <ImageButton x:Name="GPSIcon" Grid.Column="0" WidthRequest="30" HeightRequest="30" Source="icons/appbar.location.round.png" Clicked="GPSIcon_Clicked"/>
+                    <ImageButton x:Name="GPSIcon" Grid.Column="0" WidthRequest="30" HeightRequest="30" IsVisible="False" IsEnabled="False" Source="icons/appbar.location.round.png" Clicked="GPSIcon_Clicked"/>
                     <StackLayout Grid.Column="1" Orientation="Horizontal">
                         <Label x:Name="ArrivalTimeLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="14" />
                         <Label x:Name="ArrivalTimeMeasurementLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="10" />
