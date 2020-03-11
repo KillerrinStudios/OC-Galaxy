@@ -9,7 +9,7 @@
     RotaryFocusObject="{Binding RotaryFocusTarget}">
     <w:CirclePage.Content>
         <Grid>
-            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13 min" StopName="Billings Bridge 2A" IsGPS="True"/>
+            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13" ArrivalTimeMeasurement="min" StopName="Billings Bridge 2A" IsGPS="True"/>
         </Grid>
     </w:CirclePage.Content>
 </w:CirclePage>

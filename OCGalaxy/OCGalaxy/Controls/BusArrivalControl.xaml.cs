@@ -53,6 +53,19 @@ namespace OCGalaxy.Controls
             set { SetValue(ArrivalTimeProperty, value); }
         }
 
+        public static readonly BindableProperty ArrivalTimeMeasurementProperty = BindableProperty.Create(
+            propertyName: nameof(ArrivalTimeMeasurement),
+            returnType: typeof(string),
+            declaringType: typeof(BusArrivalControl),
+            defaultValue: "",
+            defaultBindingMode: Xamarin.Forms.BindingMode.OneWay,
+            propertyChanged: ArrivalTimeMeasurementPropertyChanged);
+        public string ArrivalTimeMeasurement
+        {
+            get { return (string)GetValue(ArrivalTimeMeasurementProperty); }
+            set { SetValue(ArrivalTimeMeasurementProperty, value); }
+        }
+
         public static readonly BindableProperty StopNameProperty = BindableProperty.Create(
             propertyName: nameof(StopName),
             returnType: typeof(string),
@@ -86,28 +99,39 @@ namespace OCGalaxy.Controls
 
         private static void RouteNumberPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (BusArrivalControl)bindable;
+            BusArrivalControl control = (BusArrivalControl)bindable;
             control.RouteNumberLabel.Text = newValue.ToString();
+            Debug.WriteLine($"RouteNumber Changed: {oldValue} -> {newValue}");
         }
         private static void RouteNamePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (BusArrivalControl)bindable;
+            BusArrivalControl control = (BusArrivalControl)bindable;
             control.RouteNameLabel.Text = newValue.ToString();
+            Debug.WriteLine($"RouteName Changed: {oldValue} -> {newValue}");
         }
         private static void ArrivalTimePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (BusArrivalControl)bindable;
+            BusArrivalControl control = (BusArrivalControl)bindable;
             control.ArrivalTimeLabel.Text = newValue.ToString();
+            Debug.WriteLine($"ArrivalTime Changed: {oldValue} -> {newValue}");
+        }
+        private static void ArrivalTimeMeasurementPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            BusArrivalControl control = (BusArrivalControl)bindable;
+            control.ArrivalTimeMeasurementLabel.Text = newValue.ToString();
+            Debug.WriteLine($"ArrivalTimeMeasurement Changed: {oldValue} -> {newValue}");
         }
         private static void StopNamePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (BusArrivalControl)bindable;
+            BusArrivalControl control = (BusArrivalControl)bindable;
             control.StopNameLabel.Text = newValue.ToString();
+            Debug.WriteLine($"StopName Changed: {oldValue} -> {newValue}");
         }
         private static void IsGPSPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (BusArrivalControl)bindable;
+            BusArrivalControl control = (BusArrivalControl)bindable;
             control.GPSIcon.IsVisible = (bool)newValue;
+            Debug.WriteLine($"IsGPS Changed: {oldValue} -> {newValue}");
         }
 
     }

@@ -11,25 +11,35 @@
             <w:CircleImage x:Name="BusImage" Source="backgrounds/WidgetBackground.png" />
 
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                <Grid VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="110" HeightRequest="25" Margin="0,60,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="0">
-                    <Label x:Name="RouteNumberLabel" TextColor="White" />
-                    <Label x:Name="RouteNameLabel" TextColor="White" />
-                </StackLayout>
+                    <Label x:Name="RouteNumberLabel" Grid.Column="0" VerticalOptions="Center" TextColor="White" FontSize="8"/>
+                    <Label x:Name="RouteNameLabel" Grid.Column="1" VerticalOptions="Center" TextColor="White" FontSize="4" />
+                </Grid>
 
-                <StackLayout Orientation="Horizontal" Grid.Row="1">
-                    <Image x:Name="GPSIcon" Source="icons/appbar.location.round.png" />
-                    <Label x:Name="ArrivalTimeLabel" TextColor="White" />
-                </StackLayout>
+                <Grid VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="145" HeightRequest="105" Margin="110,100,110,165">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image x:Name="GPSIcon" Grid.Column="0" WidthRequest="30" HeightRequest="30" Source="icons/appbar.location.round.png"/>
+                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                        <Label x:Name="ArrivalTimeLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="14" />
+                        <Label x:Name="ArrivalTimeMeasurementLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="10" />
+                    </StackLayout>
+                </Grid>
 
-                <StackLayout Grid.Row="2">
-                    <Label x:Name="StopNameLabel" TextColor="White" />
-                </StackLayout>
+
+                <Grid VerticalOptions="End" HorizontalOptions="Center" HeightRequest="32" WidthRequest="150" Margin="100,0,100,106">
+                    <Label x:Name="StopNameLabel" TextColor="White" FontSize="6" 
+                           WidthRequest="150" HeightRequest="32" LineBreakMode="CharacterWrap"
+                           HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </Grid>
             </Grid>
         </Grid>
     </ContentView.Content>
