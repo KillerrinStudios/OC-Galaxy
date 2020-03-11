@@ -11,7 +11,7 @@
             <w:CircleImage x:Name="BusImage" Source="backgrounds/WidgetBackground.png" />
 
             <Grid>
-                <Grid VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="110" HeightRequest="25" Margin="0,60,0,0">
+                <Grid VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="110" HeightRequest="25" Margin="0,60,0,0" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
@@ -27,7 +27,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <Image x:Name="GPSIcon" Grid.Column="0" WidthRequest="30" HeightRequest="30" Source="icons/appbar.location.round.png"/>
+                    <ImageButton x:Name="GPSIcon" Grid.Column="0" WidthRequest="30" HeightRequest="30" Source="icons/appbar.location.round.png" Clicked="GPSIcon_Clicked"/>
                     <StackLayout Grid.Column="1" Orientation="Horizontal">
                         <Label x:Name="ArrivalTimeLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="14" />
                         <Label x:Name="ArrivalTimeMeasurementLabel" VerticalOptions="Center" Padding="5,0,0,0" TextColor="White" FontSize="10" />

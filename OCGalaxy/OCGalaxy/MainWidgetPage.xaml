@@ -5,11 +5,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OCGalaxy"
     xmlns:occ="clr-namespace:OCGalaxy.Controls"
+    xmlns:occvt="clr-namespace:OCGalaxy.Converters"
+    xmlns:vm="clr-namespace:OCGalaxy.ViewModels"
     xmlns:w="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms" 
-    RotaryFocusObject="{Binding RotaryFocusTarget}">
+    x:Name="MainWidget"
+    RotaryFocusObject="{x:Reference MainWidget}">
+    <w:CirclePage.BindingContext>
+        <vm:MainWidgetViewModel />
+    </w:CirclePage.BindingContext>
     <w:CirclePage.Content>
-        <Grid>
-            <occ:BusArrivalControl RouteNumber="97" RouteName="Airport" ArrivalTime="13" ArrivalTimeMeasurement="min" StopName="Billings Bridge 2A" IsGPS="True"/>
-        </Grid>
+        <AbsoluteLayout>
+            <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Grid>
+                    <occ:BusArrivalControl RouteNumber="{Binding BusArrivalVM.FirstRoute.RouteNo}" RouteName="{Binding BusArrivalVM.FirstTrip.TripDestination}"
+                                           ArrivalTime="{Binding BusArrivalVM.ArrivalMinutes}" ArrivalTimeMeasurement="min"
+                                           StopName="{Binding BusArrivalVM.ApiResult.GetNextTripsForStopResult.StopLabel}"
+                                           IsGPS="{Binding BusArrivalVM.IsGPSData}" GPSClicked="BusArrivalControl_GPSClicked"/>
+
+                    <ImageButton x:Name="StartApiIconButton" Source="icons/appbar.control.play.png" IsVisible="{Binding BusArrivalVM.APISearching, Converter={occvt:InverseBooleanConverter}}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Clicked="StartApiIconButton_Clicked"/>
+                    <ImageButton x:Name="StopApiIconButton" Source="icons/appbar.control.stop.png" IsVisible="{Binding BusArrivalVM.APISearching}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Clicked="StopApiIconButton_Clicked"/>
+                    <ImageButton x:Name="SettingsIconButton" Source="icons/appbar.settings.png" VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="30" Clicked="SettingsIconButton_Clicked"/>
+                </Grid>
+            </ContentView>
+            <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="{Binding MapEnabled}">
+                <Grid>
+                    <Label>Map</Label>
+                </Grid>
+            </ContentView>
+            <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="{Binding SettingEnabled}">
+                <Grid>
+                    <Label>Settings</Label>
+                </Grid>
+            </ContentView>
+        </AbsoluteLayout>
+
     </w:CirclePage.Content>
 </w:CirclePage>

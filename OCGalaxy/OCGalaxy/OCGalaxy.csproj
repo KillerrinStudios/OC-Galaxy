@@ -2,10 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <UserSecretsId>8aa55baf-e1e1-40c2-a1bb-669855870a4a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="killerrin.OCTranspo.Net" Version="1.0.0-CI-20200308-233936" />
+    <PackageReference Include="killerrin.OCTranspo.Net" Version="1.0.0-CI-20200311-051001" />
+    <PackageReference Include="Killerrin.Toolkit.Core" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.2" />
     <PackageReference Include="Tizen.Wearable.CircularUI" Version="1.4.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
   </ItemGroup>
