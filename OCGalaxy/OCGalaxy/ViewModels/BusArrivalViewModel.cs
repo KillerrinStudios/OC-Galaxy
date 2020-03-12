@@ -1,4 +1,5 @@
 ﻿using OCTranspo_Net;
+using OCTranspo_Net.Converters;
 using OCTranspo_Net.Models;
 using System;
 using System.Collections.Generic;
@@ -194,11 +195,11 @@ namespace OCGalaxy.ViewModels
 
         protected void UpdateArrivalMinutes()
         {
-            var processingTime = FirstRoute.GetRequestProcessingTime();
-            DateTime? arrivalTime = FirstTrip?.GetArrivalTime(processingTime);
-            if (arrivalTime == null) return;
+            if (FirstTrip == null) return;
 
-            int arrivalMinutes = Convert.ToInt32((arrivalTime.Value - processingTime).TotalMinutes);
+            DateTime processingTime = FirstRoute.GetRequestProcessingTime();
+            TripTimeConverter converter = new TripTimeConverter(FirstTrip);
+            int arrivalMinutes = converter.GetArrivalTimeMinutes(processingTime);
             ArrivalMinutes = arrivalMinutes;
         }
     }
