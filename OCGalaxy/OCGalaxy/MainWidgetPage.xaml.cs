@@ -33,28 +33,10 @@ namespace OCGalaxy
             viewModel.Rotate(args.IsClockwise);
         }
 
-        private void SettingsIconButton_Clicked(object sender, EventArgs e)
-        {
-            var viewModel = BindingContext as MainWidgetViewModel;
-            viewModel.SettingEnabled = true;
-        }
-
         private void BusArrivalControl_GPSClicked(object sender, EventArgs e)
         {
             var viewModel = BindingContext as MainWidgetViewModel;
             viewModel.MapEnabled = true;
-        }
-
-        private void StartApiIconButton_Clicked(object sender, EventArgs e)
-        {
-            var viewModel = BindingContext as MainWidgetViewModel;
-            viewModel.BusArrivalVM.StartApiCall();
-        }
-
-        private void StopApiIconButton_Clicked(object sender, EventArgs e)
-        {
-            var viewModel = BindingContext as MainWidgetViewModel;
-            viewModel.BusArrivalVM.StopApiCall();
         }
     }
 }

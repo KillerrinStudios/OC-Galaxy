@@ -1,6 +1,8 @@
-﻿using System;
+﻿using OCGalaxy.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace OCGalaxy.ViewModels
 {
@@ -8,6 +10,28 @@ namespace OCGalaxy.ViewModels
     {
         public BusArrivalViewModel BusArrivalVM { get; protected set; } = new BusArrivalViewModel();
         public SettingsViewModel SettingsVM { get; protected set; } = new SettingsViewModel();
+
+        private MenuItemModel _settingsMenuItem = null;
+        public MenuItemModel SettingsMenuItem
+        {
+            get => _settingsMenuItem;
+            protected set
+            {
+                _settingsMenuItem = value;
+                RaisePropertyChanged(nameof(SettingsMenuItem));
+            }
+        }
+
+        private ToggleMenuItemModel _searchApiMenuItem;
+        public ToggleMenuItemModel SearchApiMenuItem
+        {
+            get => _searchApiMenuItem;
+            set
+            {
+                _searchApiMenuItem = value;
+                RaisePropertyChanged(nameof(SearchApiMenuItem));
+            }
+        }
 
         bool _settingEnabled;
         public bool SettingEnabled
@@ -33,7 +57,11 @@ namespace OCGalaxy.ViewModels
 
         public MainWidgetViewModel()
         {
-
+            SettingsMenuItem = new MenuItemModel("Settings", "", "icons/appbar.settings.png", new Command(() => { SettingEnabled = true; }));
+            SearchApiMenuItem = new ToggleMenuItemModel(false,
+                new MenuItemModel("Start Searching", "Starts searching for Trips", "icons/appbar.control.play.png", new Command(() => { BusArrivalVM.StartApiCall(); })),
+                new MenuItemModel("Stop Searching", "Stops searching for Trips", "icons/appbar.control.stop.png", new Command(() => { BusArrivalVM.StopApiCall(); }))
+            );
         }
 
         public override void Rotate(bool isClockwise)

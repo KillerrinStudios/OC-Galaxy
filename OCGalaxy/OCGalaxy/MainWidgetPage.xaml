@@ -21,10 +21,6 @@
                                            ArrivalTime="{Binding BusArrivalVM.ArrivalMinutes}" ArrivalTimeMeasurement="min"
                                            StopName="{Binding BusArrivalVM.ApiResult.GetNextTripsForStopResult.StopLabel}"
                                            IsGPS="{Binding BusArrivalVM.IsGPSData}" GPSClicked="BusArrivalControl_GPSClicked"/>
-
-                    <ImageButton x:Name="StartApiIconButton" Source="icons/appbar.control.play.png" IsVisible="{Binding BusArrivalVM.APISearching, Converter={occvt:InverseBooleanConverter}}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Clicked="StartApiIconButton_Clicked"/>
-                    <ImageButton x:Name="StopApiIconButton" Source="icons/appbar.control.stop.png" IsVisible="{Binding BusArrivalVM.APISearching}" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" Clicked="StopApiIconButton_Clicked"/>
-                    <ImageButton x:Name="SettingsIconButton" Source="icons/appbar.settings.png" VerticalOptions="End" HorizontalOptions="Center" WidthRequest="30" HeightRequest="30" Clicked="SettingsIconButton_Clicked"/>
                 </Grid>
             </ContentView>
             <ContentView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" IsVisible="{Binding MapEnabled}">
@@ -38,6 +34,9 @@
                 </Grid>
             </ContentView>
         </AbsoluteLayout>
-
     </w:CirclePage.Content>
+    <w:CirclePage.ToolbarItems>
+        <w:CircleToolbarItem x:Name="ApiSearchButton" Text="{Binding SearchApiMenuItem.CurrentState.Text}" SubText="{Binding SearchApiMenuItem.CurrentState.SubText}" IconImageSource="{Binding SearchApiMenuItem.CurrentState.IconImageSource}" IsEnabled="{Binding SearchApiMenuItem.CurrentState.Enabled}" Command="{Binding SearchApiMenuItem.Toggle}" />
+        <w:CircleToolbarItem x:Name="SettingsButton" Text="{Binding SettingsMenuItem.Text}" SubText="{Binding SettingsMenuItem.SubText}" IconImageSource="{Binding SettingsMenuItem.IconImageSource}" IsEnabled="{Binding SettingsMenuItem.Enabled}" Command="{Binding SettingsMenuItem.Action}" />
+    </w:CirclePage.ToolbarItems>
 </w:CirclePage>
