@@ -117,9 +117,8 @@ namespace OCGalaxy.ViewModels
 
         public BusArrivalViewModel()
         {
-            var config = GetConfiguration();
-            string appID = config["appID"];
-            string apiKey = config["apiKey"];
+            string appID = Secrets.AppID;
+            string apiKey = Secrets.ApiKey
             _ocTranspo = new OCTranspoService(appID, apiKey);
 
             _apiCallTimer.Elapsed += _apiCallTimer_Elapsed;

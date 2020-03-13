@@ -10,11 +10,6 @@ namespace OCGalaxy.ViewModels
 {
     public abstract class OCViewModelBase : ModelBase
     {
-        public IConfiguration GetConfiguration()
-        {
-            return ((App)App.Current).Configuration;
-        }
-
         public virtual void Rotate(bool isClockwise) { Debug.WriteLine($"isClockwise={isClockwise}"); }
         public virtual void OnBackButtonPressed() { Debug.WriteLine($"OnBackButtonPressed"); }
     }
