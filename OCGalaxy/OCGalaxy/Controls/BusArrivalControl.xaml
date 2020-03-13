@@ -8,7 +8,7 @@
              x:Class="OCGalaxy.Controls.BusArrivalControl">
     <ContentView.Content>
         <Grid>
-            <w:CircleImage x:Name="BusImage" Source="backgrounds/WidgetBackground.png" />
+            <w:CircleImage x:Name="BusImage" Source="backgrounds/BusArrivalControl.png" />
 
             <Grid>
                 <Grid VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="110" HeightRequest="25" Margin="0,60,0,0" >
